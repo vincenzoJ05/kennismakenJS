@@ -1,0 +1,21 @@
+<script>
+  const studentCijfer = [9.5, 8, 6.5, 7, 5, 1];
+  let gemiddelde = 0;
+  let totaal = 0;
+  studentCijfer.push(10, 3, 5);
+
+ for(cijfer of studentCijfer){
+  totaal = totaal + cijfer;
+ }
+
+ gemiddelde = totaal / studentCijfer.length;
+
+ if(gemiddelde >= 5.5){
+  console.log(`gefeliciteerd, je hebt een voldoende gehaald! Dit is jouw gemiddlde: ${gemiddelde}`);
+ } else {
+  console.log(`helaas, je hebt geen voldoende gehaald! Dit is jouw gemiddlde: ${gemiddelde}`);
+ }
+
+ console.log(gemiddelde);
+ console.log(totaal);
+</script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>saldo checker</title>
+  </head>
+  <body>
+    <div class="saldo">
+        <label for="">Voer jouw huidige saldo in:</label>
+        <input id="input" type="text" />
+        <button type="submit" id="button" >Voer in</button>
+    </div>
+  </body>
+</html>
+<script>
+let input = document.getElementById('input');
+let button = document.getElementById('button');
+button.addEventListener('click', berekening);
+  
+  function berekening(){
+    if(input.value < 100){
+        alert('je hebt niet genoeg saldo om de schoenen te kopen.');
+    } else {
+        alert('rich boy.');
+        
+    }
+  }
+</script>

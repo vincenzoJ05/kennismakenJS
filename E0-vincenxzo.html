@@ -1,0 +1,69 @@
+<script>
+  let usersAantal = prompt("hoeveel keer wilt u spelen?");
+  sessionStorage.setItem("keer", usersAantal);
+
+  let aantalKeer = sessionStorage.getItem("keer");
+
+  console.log(aantalKeer);
+
+  const land = {
+    Italy: "Rome",
+    Luxembourg: "Luxembourg",
+    Belgium: "Brussels",
+    Denmark: "Copenhagen",
+    Finland: "Helsinki",
+    France: "Paris",
+    Slovakia: "Bratislava",
+    Slovenia: "Ljubljana",
+    Germany: "Berlin",
+    Greece: "Athens",
+    Ireland: "Dublin",
+    Netherlands: "Amsterdam",
+    Portugal: "Lisbon",
+    Spain: "Madrid",
+    Sweden: "Stockholm",
+    United_Kingdom: "London",
+    Cyprus: "Nicosia",
+    Lithuania: "Vilnius",
+    Czech_Republic: "Prague",
+    Estonia: "Tallin",
+    Hungary: "Budapest",
+    Latvia: "Riga",
+    Malta: "Valetta",
+    Austria: "Vienna",
+    Poland: "Warsaw",
+  };
+
+  let score = 0;
+
+  let pogingen = 0;
+  pogingen = sessionStorage.getItem("poging");
+  let landen = Object.keys(land);
+
+  for (i = 0; i < aantalKeer; i++) {
+    let random = Math.floor(Math.random() * landen.length);
+
+    let huidigLand = landen[random];
+    console.log(huidigLand);
+
+    let antwoord = prompt("wat is de hoofdstad van " + huidigLand + " (vergeet niet om hoofdletters te gebruiken)");
+
+    if (antwoord == land[huidigLand]) {
+      alert("je bent echt slim in je algemene kennis man");
+      score++;
+    } else {
+      alert("je bent echt niet zo slim in je algemene kenis");
+    }
+
+    pogingen++;
+
+    sessionStorage.setItem("score", score);
+    sessionStorage.setItem("poging", pogingen);
+    score = sessionStorage.getItem("score");
+
+    alert("Score: " + score + " Pogingen: " + pogingen);
+    sessionStorage.removeItem('score')
+    sessionStorage.removeItem('poging')
+  }
+</script>
+
